@@ -1,6 +1,9 @@
 Investigation of Domestic Flight Delays at Guarulhos Airport (SBGR)
 =====
 [![MBA USP](https://img.shields.io/badge/MBA-USP-blue)](https://mbauspesalq.com/)
+[![REDEMET](https://img.shields.io/badge/REDEMET-blue)](https://www.redemet.aer.mil.br/)
+[![ANAC](https://img.shields.io/badge/ANAC-blue)](https://www.gov.br/anac/pt-br)
+[![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://github.com/Unidata/MetPy/blob/main/README.md)
 
 This repository contains a research project on domestic flight delays at Guarulhos International Airport (SBGR) in Brazil. The analysis is conducted solely based on METAR (Meteorological Aerodrome Report) information and delay times recorded.
 
@@ -12,25 +15,24 @@ Scripts: Source code and scripts used for data collection, processing, and analy
 Data: METAR dataset (from REDEMET api) and delay information from ANAC.
 Results: Analysis results, graphs, and conclusions obtained during the investigation.
 
-We hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
+Python Libraries:
+-----------------
+[![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://pypi.org/project/MetPy/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.2.0-green)](https://pypi.org/project/MetPy/)
 
-:computer: REDEMET API instructions :computer: 
+I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
-1- You will need a api key to have access. You can get [here](https://www.atd-1.com/cadastro-a)
+:computer: REDEMET API instructions :computer:
+----------------------------------------------
 
-2- use tools like "Postman", "Insomnia",...
-
-3- address: https://api-redemet.decea.mil.br/mensagens/metar/
-
-4- Airport ICAO code: like SBGR
-
-5- api key: api_key=yourkeyhere
-
-6- initial date: data_ini=YYYYMMDD
-
-7- final date: data_fim=YYYYMMDD
-
-8- results per page: page_tam=200 (the max is 200)
+- You will need a api key to have access. You can get [here](https://www.atd-1.com/cadastro-a)
+- use tools like "Postman", "Insomnia",...
+- address: https://api-redemet.decea.mil.br/mensagens/metar/
+- Airport ICAO code: like SBGR
+- api key: api_key=yourkeyhere
+- initial date: data_ini=YYYYMMDD
+- final date: data_fim=YYYYMMDD
+- results per page: page_tam=200 (the max is 200)
 
     use example:https://api-redemet.decea.mil.br/mensagens/metar/SBGR?api_key=yourkeyhere&data_ini=2023010100&data_fim=2023123100&page_tam=200
 
