@@ -13,7 +13,7 @@ The main aim of this investigation is to understand the relationship between met
 Why SBGR (Guarulhos Airport)?
 This research is just a POC (proof of concept) and SBGR is the biggest airport in Brazil. Spanning across 11,905,056.52 square meters, equipped with 51 boarding bridges, and facilitating around 205 landings and takeoffs per day. Notably, it is situated in a region characterized by considerable meteorological diversity.
 
-Repository Contents:
+Repository Contents
 Scripts: Source code and scripts used for data collection, processing, and analysis.
 Data: METAR dataset (from REDEMET api) and delay information from ANAC.
 Results: Analysis results, graphs, and conclusions obtained during the investigation.
@@ -25,7 +25,7 @@ Python Libraries:
 
 I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
-:satellite_antenna: REDEMET API instructions
+📡 REDEMET API instructions
 ----------------------------------------------
 [![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
 
