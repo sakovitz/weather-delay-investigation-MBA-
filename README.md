@@ -1,4 +1,6 @@
 Investigation of Domestic Flight Delays at Guarulhos Airport (SBGR)
+=====
+[![MBA USP](https://img.shields.io/badge/MBA-USP-blue)](https://mbauspesalq.com/)
 
 This repository contains a research project on domestic flight delays at Guarulhos International Airport (SBGR) in Brazil. The analysis is conducted solely based on METAR (Meteorological Aerodrome Report) information and delay times recorded.
 
