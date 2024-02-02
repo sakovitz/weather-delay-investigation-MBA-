@@ -4,6 +4,7 @@ Investigation of Domestic Flight Delays at Guarulhos Airport (SBGR) using just M
 [![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
 [![ANAC](https://img.shields.io/badge/ANAC-blue)](https://www.gov.br/anac/pt-br)
 [![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://github.com/Unidata/MetPy/blob/main/README.md)
+[![Jupyter](https://img.shields.io/badge/Jupyter-notebook-c93810)](https://github.com/Unidata/MetPy/blob/main/README.md)
 
 This repository contains a research project on domestic flight delays at Guarulhos International Airport (SBGR) in Brazil. The analysis is conducted solely based on METAR (Meteorological Aerodrome Report) information and delay times recorded.
 
