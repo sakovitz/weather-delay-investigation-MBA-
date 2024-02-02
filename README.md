@@ -18,7 +18,7 @@ Scripts: Source code and scripts used for data collection, processing, and analy
 Data: METAR dataset (from REDEMET api) and delay information from ANAC.
 Results: Analysis results, graphs, and conclusions obtained during the investigation.
 
-Python Libraries:
+Python Libraries
 -----------------
 [![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://pypi.org/project/MetPy/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.2.0-c60dde)](https://pypi.org/project/MetPy/)
