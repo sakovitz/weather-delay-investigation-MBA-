@@ -28,3 +28,5 @@ DataFrame Columns:
 - `air_temperature:` Temperature, measured in degrees Celsius
 - `dew_point_temperature:` ew point, measured in degrees Celsius
 - `altimeter:` Altimeter value, measured in inches of mercury (ex. 29.91)
+
+**Import:** `from functions.func_metar_df_module import metar_processing`
