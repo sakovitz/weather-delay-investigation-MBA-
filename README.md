@@ -14,12 +14,19 @@ We hope this repository provides valuable insights into flight delays at Guarulh
 
 :computer: REDEMET API instructions :computer:
 1- You will need a api key to have access. You can get [here](https://www.atd-1.com/cadastro-a)
+
 2- use tools like "Postman", "Insomnia",...
+
 3- address: https://api-redemet.decea.mil.br/mensagens/metar/
+
 4- Airport ICAO code: like SBGR
+
 5- api key: api_key=yourkeyhere
+
 6- initial date: data_ini=YYYYMMDD
+
 7- final date: data_fim=YYYYMMDD
+
 8- results per page: page_tam=200 (the max is 200)
 
     use example:https://api-redemet.decea.mil.br/mensagens/metar/SBGR?api_key=yourkeyhere&data_ini=2023010100&data_fim=2023123100&page_tam=200
