@@ -1,7 +1,7 @@
-Investigation of Domestic Flight Delays at Guarulhos Airport (SBGR)
+Investigation of Domestic Flight Delays at Guarulhos Airport (SBGR) using just METAR messages
 =====
 [![MBA USP](https://img.shields.io/badge/MBA-USP-blue)](https://mbauspesalq.com/)
-[![REDEMET](https://img.shields.io/badge/REDEMET-blue)](https://www.redemet.aer.mil.br/)
+[![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
 [![ANAC](https://img.shields.io/badge/ANAC-blue)](https://www.gov.br/anac/pt-br)
 [![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://github.com/Unidata/MetPy/blob/main/README.md)
 
@@ -9,6 +9,9 @@ This repository contains a research project on domestic flight delays at Guarulh
 
 Objective:
 The main aim of this investigation is to understand the relationship between meteorological conditions, as reported by METAR, and delays in domestic flights at Guarulhos Airport. Through the analysis of this data, we seek to identify patterns and trends that may contribute to improvements in operational efficiency and decision-making for airlines and the airport.
+
+Why SBGR (Guarulhos Airport)?
+This research is just a POC (proof of concept) and SBGR is the biggest airport in Brazil. Spanning across 11,905,056.52 square meters, equipped with 51 boarding bridges, and facilitating around 205 landings and takeoffs per day. Notably, it is situated in a region characterized by considerable meteorological diversity.
 
 Repository Contents:
 Scripts: Source code and scripts used for data collection, processing, and analysis.
@@ -18,12 +21,13 @@ Results: Analysis results, graphs, and conclusions obtained during the investiga
 Python Libraries:
 -----------------
 [![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://pypi.org/project/MetPy/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.2.0-green)](https://pypi.org/project/MetPy/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.2.0-c60dde)](https://pypi.org/project/MetPy/)
 
 I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
-:computer: REDEMET API instructions :computer:
+:satellite_antenna: REDEMET API instructions
 ----------------------------------------------
+[![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
 
 - You will need a api key to have access. You can get [here](https://www.atd-1.com/cadastro-a)
 - use tools like "Postman", "Insomnia",...
