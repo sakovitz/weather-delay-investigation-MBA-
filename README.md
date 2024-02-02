@@ -24,6 +24,8 @@ Python Libraries
 [![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://pypi.org/project/MetPy/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.2.0-c60dde)](https://pypi.org/project/MetPy/)
 
+Note: MetPy library use is just to transform METAR messages on to a Pandas DataFrame using `parse_metar_file()`
+
 I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
 📡 REDEMET API instructions
