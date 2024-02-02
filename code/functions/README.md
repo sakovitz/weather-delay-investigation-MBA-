@@ -8,9 +8,9 @@ func_metar_df_module
 **Note:** Altimeter in QNH (ex. 1013.25) will be converted to mercury (ex. 29.92)
 
 DataFrame Columns:
-- <span style="color:blue">**station_id:**<span style="color:blue"> Station Identifier ICAO (ex. SBGR)
-- **date_time:** Date and time of the observation, datetime object in ZULU
-- **wind_direction:** Direction the wind is coming from, measured in degrees
+- `station_id:` Station Identifier ICAO (ex. SBGR)
+- `date_time:` Date and time of the observation, datetime object in ZULU
+- `wind_direction:` Direction the wind is coming from, measured in degrees
 - **wind_speed:** Wind speed, measured in knots
 - **wind_gust:** Wind gust, measured in knots
 - **visibility:** Visibility distance, measured in meters
