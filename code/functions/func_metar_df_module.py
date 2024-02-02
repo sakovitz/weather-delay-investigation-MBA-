@@ -1,14 +1,15 @@
 import metpy.io
 import pandas as pd
 from io import StringIO
+import os
 
 def metar_processing():
     # puxa json como dataframe
-    df = pd.read_json('D:\Data Scientist\MBA\TCC\\repo\weather-delay-investigation-MBA-\code\\functions\\related_archives\\response.json')
+    df = pd.read_json(os.getcwd() + r'\code\functions\related_archives\response.json')
     # transforma e exporta o dataframe em csv 
-    df.to_csv('D:\Data Scientist\MBA\TCC\\repo\weather-delay-investigation-MBA-\code\\functions\\related_archives\metar.csv', index=False)
+    df.to_csv(os.getcwd() + r'\code\functions\related_archives\metar.csv', index=False)
 
-    all_metars = '\n'.join(line.split(',')[2] for line in open('D:\Data Scientist\MBA\TCC\\repo\weather-delay-investigation-MBA-\code\\functions\\related_archives\metar.csv', 'rt'))
+    all_metars = '\n'.join(line.split(',')[2] for line in open(os.getcwd() + r'\code\functions\related_archives\metar.csv', 'rt'))
     df = metpy.io.parse_metar_file(StringIO(all_metars))
 
     # documentação de colunas https://unidata.github.io/MetPy/latest/api/generated/metpy.io.parse_metar_file.html
