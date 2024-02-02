@@ -3,7 +3,9 @@ Functions Documentarion
 
 func_metar_df_module
 --------------------
-`metar_processing()` - A function that returns a Pandas DataFrame containing METAR information organized into individual columns.
+`metar_processing()` - A function that returns a Pandas DataFrame containing METAR information organized into individual columns. This function transform a Json file with METAR messages and uses MetPy's function [parse_metar_file()](https://unidata.github.io/MetPy/latest/api/generated/metpy.io.parse_metar_file.html) to transform into a Pands Dataframe.
+
+**Note:** Altimeter in QNH (ex. 1013.25) will be converted to mercury (ex. 29.92)
 
 DataFrame Columns:
 - **station_id:** Station Identifier ICAO (ex. SBGR)
