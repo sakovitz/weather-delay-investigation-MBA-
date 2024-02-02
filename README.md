@@ -1,4 +1,4 @@
-Investigation of Domestic Flight Delays at Guarulhos Airport (SBGR) using just METAR messages
+Investigating Domestic Flight Delays at Guarulhos Airport (SBGR) Using METAR Messages
 =====
 [![MBA USP](https://img.shields.io/badge/MBA-USP-blue)](https://mbauspesalq.com/)
 [![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
