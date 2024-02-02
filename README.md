@@ -16,8 +16,12 @@ This research is just a POC (proof of concept) and SBGR is the biggest airport i
 
 Repository Contents
 Scripts: Source code and scripts used for data collection, processing, and analysis.
+
 Data: METAR dataset (from REDEMET api) and delay information from ANAC.
+
 Results: Analysis results, graphs, and conclusions obtained during the investigation.
+
+I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
 Python Libraries
 -----------------
@@ -25,8 +29,6 @@ Python Libraries
 [![Pandas](https://img.shields.io/badge/Pandas-2.2.0-c60dde)](https://pypi.org/project/MetPy/)
 
 Note: MetPy library use is just to transform METAR messages on to a Pandas DataFrame using `parse_metar_file()`
-
-I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
 📡 REDEMET API instructions
 ----------------------------------------------
