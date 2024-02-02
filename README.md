@@ -24,14 +24,20 @@ Results: Analysis results, graphs, and conclusions obtained during the investiga
 I hope this repository provides valuable insights into flight delays at Guarulhos Airport and contributes to improving the understanding and management of these events. Happy analyzing!
 
 📚 Python Libraries
------------------
+-------------------
 [![MetPy](https://img.shields.io/badge/MetPy-1.6.1-green)](https://pypi.org/project/MetPy/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.2.0-c60dde)](https://pypi.org/project/pandas/)
 
 Note: MetPy library use is just to transform METAR messages on to a Pandas DataFrame using `parse_metar_file()`
 
+📡 ANAC Data instructions
+---------
+[![ANAC](https://img.shields.io/badge/ANAC-blue)](https://www.gov.br/anac/pt-br)
+
+The flight schedule information is gathered from data made available by ANAC in CSV format (monthly) [here](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/historico-de-voos). For a detailed explanation of variables (columns), you can refer to the documentation [here](https://www.gov.br/anac/pt-br/acesso-a-informacao/dados-abertos/areas-de-atuacao/voos-e-operacoes-aereas/voo-regular-ativo-vra/62-voo-regular-ativo-vra).
+
 📡 REDEMET API instructions
-----------------------------------------------
+---------------------------
 [![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
 
 - You will need a api key to have access. You can get [here](https://www.atd-1.com/cadastro-a)
