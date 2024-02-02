@@ -43,7 +43,7 @@ Note: MetPy library use is just to transform METAR messages on to a Pandas DataF
 - final date: data_fim=YYYYMMDD
 - results per page: page_tam=200 (the max is 200)
 
-    use example:https://api-redemet.decea.mil.br/mensagens/metar/SBGR?api_key=yourkeyhere&data_ini=2023010100&data_fim=2023123100&page_tam=200
+    `use example:https://api-redemet.decea.mil.br/mensagens/metar/SBGR?api_key=yourkeyhere&data_ini=2023010100&data_fim=2023123100&page_tam=200
 
     result example:
     {
@@ -70,4 +70,4 @@ Note: MetPy library use is just to transform METAR messages on to a Pandas DataF
             "to": 1,
             "total": 9290
         }
-    }
+    }`
