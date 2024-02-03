@@ -38,6 +38,8 @@ Note: MetPy library use is just to transform METAR messages on to a Pandas DataF
 
 The flight schedule information is gathered from data made available by ANAC in CSV format (monthly) [here](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/historico-de-voos). For a detailed explanation of variables (columns), you can refer to the documentation [here](https://www.gov.br/anac/pt-br/acesso-a-informacao/dados-abertos/areas-de-atuacao/voos-e-operacoes-aereas/voo-regular-ativo-vra/62-voo-regular-ativo-vra).
 
+**Note:** The columns will be modified after the CSV passes through the transformation via the flights_processing() function.
+
 📡 REDEMET API instructions
 ---------------------------
 [![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
