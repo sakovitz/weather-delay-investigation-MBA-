@@ -33,7 +33,7 @@ Functions Documentarion
 
 📚 func_metar_df_module
 -----------------------
-`flights_processing()` - A function that returns a Pandas DataFrame containing Flights information. This function transform a csv file with flights informations to a Pandas DataFrame.
+`flights_processing()` - A function that returns a Pandas DataFrame containing Flights records. This function transform a csv file with flights informations to a Pandas DataFrame.
 
 **Note:** The 'datetime' data extracted from ANAC is in the Brasília time zone (GMT -03), which is why the `flights_processing()` function convert it to Zulu time.
 
