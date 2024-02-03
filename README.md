@@ -37,19 +37,6 @@ Note: MetPy library use is just to transform METAR messages on to a Pandas DataF
 
 The flight schedule information is gathered from data made available by ANAC in CSV format (monthly) [here](https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas/historico-de-voos). For a detailed explanation of variables (columns), you can refer to the documentation [here](https://www.gov.br/anac/pt-br/acesso-a-informacao/dados-abertos/areas-de-atuacao/voos-e-operacoes-aereas/voo-regular-ativo-vra/62-voo-regular-ativo-vra).
 
-CSV columns:
-- `Sigla ICAO Empresa Aérea:` Sigla/Designador ICAO Empresa Aérea
-- `Número Voo:`	Numeração do voo
-- `Código DI:` Caractere usado para identificar o Dígito Identificador (DI) para cada etapa de voo
-- `Código Tipo Linha:` Caractere usado para identificar o Tipo de Linha realizada para cada etapa de voo
-- `Sigla ICAO Aeroporto Origem:` Sigla/Designador ICAO Aeroporto de Origem
-- `Sigla ICAO Aeroporto Destino:` Sigla/Designador ICAO Aeroporto de Destino
-- `Partida Prevista:` Data e horário da partida prevista informada pela empresa aérea, em horário de Brasília
-- `Partida Real:` Data e horário da partida realizada informada pela empresa aérea, em horário de Brasília
-- `Chegada Prevista:` Data e horário da chegada prevista informada pela empresa aérea, em horário de Brasília
-- `Chegada Real:` Data e horário da chegada realizada, informada pela empresa aérea, em horário de Brasília
-- `Situação do voo:` Campo informando a situação do voo: realizado, cancelado ou não informado.​
-
 📡 REDEMET API instructions
 ---------------------------
 [![REDEMET](https://img.shields.io/badge/REDEMET-c60dde)](https://www.redemet.aer.mil.br/)
