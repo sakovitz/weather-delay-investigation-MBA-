@@ -30,3 +30,18 @@ Functions Documentarion
 - `altimeter:` Altimeter value, measured in inches of mercury (ex. 29.91)
 
 **Import:** `from functions.func_metar_df_module import metar_processing`
+
+📚 func_metar_df_module
+-----------------------
+`flights_processing()` - A function that returns a Pandas DataFrame containing Flights information. This function transform a csv file with flights informations to a Pandas DataFrame.
+
+**DataFrame Columns:**
+- `origin:` Origin airport ICAO (ex. SBGR)
+- `scheduled_departure:` TimeStamp scheduled departure in Zulu time
+- `real_departure:` TimeStamp real departure in Zulu time
+- `destiny:` Destiny airport ICAO (ex. SBGR)
+- `expected_arrival:` TimeStamp arrival in Zulu time
+- `real_arrival:` TimeStamp real arrival in Zulu time
+- `flight_situation:` If the flight was canceled or performed (contains 'not reported')
+
+**Import:** `from functions.func_flights_df_module import flights_processing`
