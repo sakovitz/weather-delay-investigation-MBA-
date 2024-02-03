@@ -19,7 +19,7 @@ This research is just a POC (proof of concept) and SBGR is the biggest airport i
 Repository Contents
 Scripts: Source code and scripts used for data collection, processing, and analysis.
 
-Data: METAR dataset (from REDEMET api) and delay information from ANAC.
+Data: METAR Json (from REDEMET api) and Flight Records csv from ANAC.
 
 Results: Analysis results, graphs, and conclusions obtained during the investigation.
 
