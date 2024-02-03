@@ -35,6 +35,10 @@ Functions Documentarion
 -----------------------
 `flights_processing()` - A function that returns a Pandas DataFrame containing Flights information. This function transform a csv file with flights informations to a Pandas DataFrame.
 
+**Note:** The 'datetime' data extracted from ANAC is in the Brasília time zone (GMT -03), which is why the `flights_processing()` function convert it to Zulu time.
+
+**Note 2:** Records with null values in the 'datetime' field are removed from the final dataframe. 
+
 **DataFrame Columns:**
 - `origin:` Origin airport ICAO (ex. SBGR)
 - `scheduled_departure:` TimeStamp scheduled departure in Zulu time

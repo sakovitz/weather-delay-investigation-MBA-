@@ -20,13 +20,35 @@ def flights_processing():
     # using 'rename' metod to rename columns
     df.columns = columns_names
 
-    # changing 'flight_situation' columns values (to english)
+    # Drop columns that datetime is null
+    df = df.dropna(subset=['scheduled_departure']).dropna(subset=['real_departure']).dropna(subset=['expected_arrival']).dropna(subset=['real_arrival'])
+
+    # Drop columns that ICAO is null
+    df = df.dropna(subset=['origin']).dropna(subset=['destiny'])
+
+    # changing 'flight_situation' columns values (to engliash)
     maping = {
     'REALIZADO': 'performed',
     'CANCELADO': 'canceled',
     'NÃO INFORMADO': 'not reported'
     }
-
+    # changing now \/
     df['flight_situation'] = df['flight_situation'].replace(maping)
 
+    # transforming date columns (that are type: object to datetime64)
+    df['scheduled_departure'] = pd.to_datetime(df['scheduled_departure'], format='%d/%m/%Y %H:%M')
+    df['real_departure'] = pd.to_datetime(df['real_departure'], format='%d/%m/%Y %H:%M')
+    df['expected_arrival'] = pd.to_datetime(df['expected_arrival'], format='%d/%m/%Y %H:%M')
+    df['real_arrival'] = pd.to_datetime(df['real_arrival'], format='%d/%m/%Y %H:%M')
+    
+
+    #now we need to put datetime on Zulu. VRA csv is Brazilia time (-03) so need to add 3 hours
+    # Creating object Timedelta representing 3 hours
+    three_hours = pd.to_timedelta('3 hours')
+
+    # Adding 3 hours to datetime columns
+    df['scheduled_departure'] = df['scheduled_departure'] + three_hours
+    df['real_departure'] = df['real_departure'] + three_hours
+    df['expected_arrival'] = df['expected_arrival'] + three_hours
+    df['real_arrival'] = df['real_arrival'] + three_hours
     return df
