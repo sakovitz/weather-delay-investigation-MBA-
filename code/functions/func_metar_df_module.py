@@ -1,15 +1,14 @@
 import metpy.io
 import pandas as pd
 from io import StringIO
-import os
 
-def metar_processing():
+def metar_processing(path, archive_name):
     # upload json as dataframe
-    df = pd.read_json(os.getcwd() + r'\functions\related_archives\response.json')
+    df = pd.read_json(path + r'\\' + archive_name)
     # transform dataframe to csv 
-    df.to_csv(os.getcwd() + r'\functions\related_archives\metar.csv', index=False)
+    df.to_csv(path + '\metar.csv', index=False)
 
-    all_metars = '\n'.join(line.split(',')[2] for line in open(os.getcwd() + r'\functions\related_archives\metar.csv', 'rt'))
+    all_metars = '\n'.join(line.split(',')[2] for line in open(path + '\metar.csv', 'rt'))
     df = metpy.io.parse_metar_file(StringIO(all_metars))
 
     # json documentarion https://unidata.github.io/MetPy/latest/api/generated/metpy.io.parse_metar_file.html

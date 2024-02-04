@@ -3,7 +3,11 @@ Functions Documentarion
 
 📚 func_metar_df_module
 --------------------
-`metar_processing()` - A function that returns a Pandas DataFrame containing METAR information organized into individual columns. This function transform a Json file with METAR messages and uses MetPy's function [parse_metar_file()](https://unidata.github.io/MetPy/latest/api/generated/metpy.io.parse_metar_file.html) to transform into a Pands Dataframe.
+`metar_processing(path, archive_name)` - A function that returns a Pandas DataFrame containing METAR information organized into individual columns. This function transform a Json file with METAR messages and uses MetPy's function [parse_metar_file()](https://unidata.github.io/MetPy/latest/api/generated/metpy.io.parse_metar_file.html) to transform into a Pands Dataframe.
+
+**Parameters:**
+- `path`: Valid string path without a archive (ex. `'D:\directory\code\functions\related_archives'`). You can use relative paths like `os.getcwd() + r'\functions\related_archives'`
+- `archive_name`: Valid string with a Json archive name (ex. `'response.json'`)
 
 **Note:** Altimeter in QNH (ex. 1013.25) will be converted to mercury (ex. 29.92)
 
@@ -31,9 +35,12 @@ Functions Documentarion
 
 **Import:** `from functions.func_metar_df_module import metar_processing`
 
-📚 func_metar_df_module
+📚 func_flights_df_module
 -----------------------
-`flights_processing()` - A function that returns a Pandas DataFrame containing Flights records. This function transform a csv file with flights informations to a Pandas DataFrame.
+`flights_processing(path)` - A function that returns a Pandas DataFrame containing Flights records. This function transform a csv file with flights informations to a Pandas DataFrame.
+
+**Parameters:**
+- `path`: Valid string path to a csv file (ex. `'D:\directory\code\functions\related_archives\archive.csv'`). You can use relative paths like `os.getcwd() + r'\functions\related_archives\VRA_2023_12.csv'`
 
 **Note:** The 'datetime' data extracted from ANAC is in the Brasília time zone (GMT -03), which is why the `flights_processing()` function convert it to Zulu time.
 

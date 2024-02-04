@@ -1,10 +1,9 @@
 import pandas as pd
 from io import StringIO
-import os
 
-def flights_processing():
+def flights_processing(path):
     # get and transform csv to dataframe
-    df = pd.read_csv(os.getcwd() + r'\functions\related_archives\VRA_2023_12.csv', sep=';')
+    df = pd.read_csv(path, sep=';')
 
     # CSV documentarion https://www.gov.br/anac/pt-br/acesso-a-informacao/dados-abertos/areas-de-atuacao/voos-e-operacoes-aereas/voo-regular-ativo-vra/62-voo-regular-ativo-vra
 
