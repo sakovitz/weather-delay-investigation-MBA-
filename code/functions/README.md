@@ -54,5 +54,9 @@ Functions Documentarion
 - `expected_arrival:` TimeStamp arrival in Zulu time
 - `real_arrival:` TimeStamp real arrival in Zulu time
 - `flight_situation:` If the flight was canceled or performed (contains 'not reported')
+- `departure_status:` departure status (in_time; delayed; canceled) (with 15 minutes tolerance)
+- `departure_delay_time:` departure delay time in minutes
+- `arrival_status:` arrival status (in_time; delayed; canceled)
+- `arrival_delay_time:` arrival delay time in minutes (with 15 minutes tolerance)
 
 **Import:** `from functions.func_flights_df_module import flights_processing`
