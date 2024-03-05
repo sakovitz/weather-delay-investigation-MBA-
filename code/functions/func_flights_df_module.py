@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from io import StringIO
 
 def flights_processing(path):
@@ -50,4 +51,49 @@ def flights_processing(path):
     df['real_departure'] = df['real_departure'] + three_hours
     df['expected_arrival'] = df['expected_arrival'] + three_hours
     df['real_arrival'] = df['real_arrival'] + three_hours
+
+    # function to determine departures status
+    def calculate_departure_status(row):
+        if pd.isna(row['real_departure']):
+            return 'canceled'
+        elif row['real_departure'] - row['scheduled_departure'] <= pd.Timedelta(minutes=15):
+            return 'in_time'
+        else:
+            return 'delayed'
+
+    # function to determine departures time delay
+    def calculate_departure_delay(row):
+        if row['departure_status'] == 'delayed':
+            return (row['real_departure'] - row['scheduled_departure']).total_seconds() / 60
+        else:
+            return 0
+
+    # function to determine arrival status
+    def calculate_arrival_status(row):
+        if pd.isna(row['real_arrival']):
+            return 'canceled'
+        elif row['real_arrival'] - row['expected_arrival'] <= pd.Timedelta(minutes=15):
+            return 'in_time'
+        else:
+            return 'delayed'
+
+    # function to determine arrivals time delay
+    def calculate_arrival_delay(row):
+        if row['arrival_status'] == 'delayed':
+            return (row['real_arrival'] - row['expected_arrival']).total_seconds() / 60
+        else:
+            return 0
+
+    # certifying that columns with date and time are in the right type
+    df['scheduled_departure'] = pd.to_datetime(df['scheduled_departure'])
+    df['real_departure'] = pd.to_datetime(df['real_departure'])
+    df['expected_arrival'] = pd.to_datetime(df['expected_arrival'])
+    df['real_arrival'] = pd.to_datetime(df['real_arrival'])
+
+    # applying functions and creating collumns
+    df['departure_status'] = df.apply(calculate_departure_status, axis=1)
+    df['departure_delay_time'] = df.apply(calculate_departure_delay, axis=1)
+    df['arrival_status'] = df.apply(calculate_arrival_status, axis=1)
+    df['arrival_delay_time'] = df.apply(calculate_arrival_delay, axis=1)
+
     return df
