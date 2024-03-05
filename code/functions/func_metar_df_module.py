@@ -19,10 +19,10 @@ def metar_processing(path, archive_name):
     # deletar colunas
     df = df.drop(columns=drop_cols)
 
-    # Certifique-se de que 'date_time' está em formato de data
+    # checking type of the 'date_time' column
     df['date_time'] = pd.to_datetime(df['date_time'])
 
-    # Subtrair 3 meses e 1 ano
+    # subtract 3 months and a year
     df['date_time'] = df['date_time'] - pd.DateOffset(months=3, years=1)
 
     return df
