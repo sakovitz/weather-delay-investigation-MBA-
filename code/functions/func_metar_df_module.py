@@ -25,7 +25,4 @@ def metar_processing(path, archive_name):
     # Subtrair 3 meses e 1 ano
     df['date_time'] = df['date_time'] - pd.DateOffset(months=3, years=1)
 
-    # Verifique se a transformação foi feita corretamente
-    print(df['date_time'].head())
-
     return df
