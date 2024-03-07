@@ -40,3 +40,16 @@ arrival_dummy <- dummy_columns(.data = arrival_dummy,
 
 # Usando chart.Correlation no subset
 chart.Correlation(arrival_dummy, histogram = TRUE)
+
+sub <- arrival_dummy[, c(9, 7,8,11,12,13,15)]
+# Usando chart.Correlation no subset
+chart.Correlation(sub, histogram = TRUE)
+
+
+#modelo
+arrival_m <- glm(formula = arrival_status_delayed ~ altimeter
+                 + dew_point_temperature
+                 + altimeter
+                 + current_wx1_BR, 
+                      data = arrival_dummy, 
+                      family = "binomial")

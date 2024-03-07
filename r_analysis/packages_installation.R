@@ -3,7 +3,7 @@ packages <- c("plotly","tidyverse","ggrepel","fastDummies","knitr","kableExtra",
              "splines","reshape2","PerformanceAnalytics","correlation","see",
              "ggraph","psych","nortest","rgl","car","ggside","tidyquant","olsrr",
              "jtools","ggstance","magick","cowplot","emojifont","beepr","Rcpp",
-             "equatiomatic")
+             "equatiomatic","readxl")
 
 options(rgl.debug = TRUE)
 
