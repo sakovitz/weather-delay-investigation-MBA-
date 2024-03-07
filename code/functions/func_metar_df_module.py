@@ -23,6 +23,6 @@ def metar_processing(path, archive_name):
     df['date_time'] = pd.to_datetime(df['date_time'])
 
     # subtract 3 months and a year
-    df['date_time'] = df['date_time'] - pd.DateOffset(months=3, years=1)
+    df['date_time'] = df['date_time'] - pd.DateOffset(months=3)
 
     return df
