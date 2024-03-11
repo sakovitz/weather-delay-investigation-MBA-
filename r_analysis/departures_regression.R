@@ -9,14 +9,14 @@ arrival <- read.csv("arrival_logs.csv",
                       dec = ".")
 
 # Check types via Glimpse
-glimpse(departure)
+glimpse(arrival)
 
 # look some statistics
-summary(departure)
+summary(arrival)
 
 
 # Selecionando apenas as colunas 3 e 21
-data_subset <- departure[, c(2, 7, 5, 6, 12, 19, 20, 21)]
+data_subset <- arrival[, c(2, 7, 5, 6, 12, 19, 20, 21)]
 
 
 # Usando chart.Correlation no subset
@@ -42,10 +42,22 @@ arrival_dummy <- dummy_columns(.data = arrival_dummy,
 chart.Correlation(arrival_dummy, histogram = TRUE)
 
 sub <- arrival_dummy[, c(9, 7,8,11,12,13,15)]
+
+sub <- arrival_dummy[, c(9, 7,8,11,12,13,15)]
+
+sub <- arrival_dummy[, c(9, 7,8,11,12,13,15)]
+
+sub <- arrival_dummy[, c(9, 7,8,11,12,13,15)]
+
+sub <- arrival_dummy[, c(9, 7,8,11,12,13,15)]
+
+sub <- arrival_dummy[, c(9, 12, 13)]
+
 # Usando chart.Correlation no subset
 chart.Correlation(sub, histogram = TRUE)
 
 
+################################################################
 #modelo
 arrival_m <- glm(formula = arrival_status_delayed ~ altimeter
                  + dew_point_temperature
