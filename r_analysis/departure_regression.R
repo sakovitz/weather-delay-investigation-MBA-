@@ -12,7 +12,13 @@ departure_df <- read.csv("departure_logs.csv",
 #################################################
 
 # selecting using columns
-data_columns <- departure_df[, c(2, 4, 7, 5, 6, 8, 12, 19, 20, 21, 22)]
+data_columns <- departure_df[, c(2, 4, 7, 5, 6, 12, 19, 20, 21, 22)]
+
+# Substituir NA por 0 na coluna low_cloud_level
+data_columns$low_cloud_level[is.na(data_columns$low_cloud_level)] <- 0
+
+# Substituir NA por 0 na coluna low_cloud_level
+data_columns$wind_gust[is.na(data_columns$wind_gust)] <- 0
 
 # need to transform Y (arrival_status) column into dummy
 departure_dummy <- dummy_columns(.data = data_columns,
@@ -20,11 +26,8 @@ departure_dummy <- dummy_columns(.data = data_columns,
                                remove_selected_columns = TRUE,
                                remove_most_frequent_dummy = TRUE)
 
-# need to transform current_weather column into dummy
-departure_dummy <- dummy_columns(.data = departure_dummy,
-                               select_columns = "current_wx1",
-                               remove_selected_columns = TRUE,
-                               remove_most_frequent_dummy = TRUE)
+data_clean <- na.omit(departure_dummy)
+
 
 #################################################
 ###### summarizing models to betas choice #######
@@ -33,13 +36,20 @@ departure_dummy <- dummy_columns(.data = departure_dummy,
 ########################################################################
 # 1- Model with all variables
 complete_model <- glm(formula = departure_status_delayed ~ .,
-                      data = departure_dummy, 
+                      data = data_clean, 
                       family = "binomial")
 #checking summary
 summary(complete_model)
 
 #
 summ(complete_model, confint = T, digits = 3, ci.width = .95)
+
+# log-likelihood check
+stargazer(complete_model, nobs = T, type = "text")
+
+# Confusion Matrix to cutoff = 0.5
+confusionMatrix(table(predict(complete_model, type = "response") >= 0.5,
+                      data_clean$departure_status_delayed == 1)[2:1, 2:1])
 
 # log-likelihood check
 # stargazer(complete_model, nobs = T, type = "text") # error number of columns
@@ -221,7 +231,7 @@ confusionMatrix(table(predict(alt_ts_model, type = "response") >= 0.5,
 chiq = 136.950
 qchisq(chiq, df= 2, lower.tail = T)
 
-model_step <- step(object = four_betas_model,
+model_step <- step(object = complete_model,
                    k = qchisq(p = 0.05, df = 1, lower.tail = FALSE))
 
 summary(model_step)
@@ -232,7 +242,7 @@ stargazer(model_step, nobs = T, type = "text")
 
 # Confusion Matrix to cutoff = 0.5
 confusionMatrix(table(predict(model_step, type = "response") >= 0.5,
-                      departures_$departure_status_delayed == 1)[2:1, 2:1])
+                      data_clean$departure_status_delayed == 1)[2:1, 2:1])
 # this result its equal to the last model statistics. But i will use this model.
 
 
